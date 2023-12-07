@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateToken(String token){
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         DocumentReference documentReference =
-                databse.collection(Constants.KEY_COLLECTION_USERS).document(
+                database.collection(Constants.KEY_COLLECTION_USERS).document(
                         preferenceManager.getString(Constants.KEY_USER_ID)
                 );
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
